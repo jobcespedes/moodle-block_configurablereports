@@ -27,6 +27,7 @@ function cr_print_js_function() {
     <script type="text/javascript">
         function printDiv(id){
             var cdiv, tmpw;
+            var body = "</b"+"ody>" // https://discuss.newrelic.com/t/strange-javascript-in-my-output/19476/6
 
             cdiv = document.getElementById(id);
             tmpw = window.open(" ","Print");
@@ -34,7 +35,7 @@ function cr_print_js_function() {
             tmpw.document.open();
             tmpw.document.write('<html><body>');
             tmpw.document.write(cdiv.innerHTML);
-            tmpw.document.write('</body></html>');
+            tmpw.document.write(body+'</html>');
             tmpw.document.close();
             tmpw.print();
             tmpw.close();
